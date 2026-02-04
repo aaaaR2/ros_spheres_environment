@@ -1,0 +1,17 @@
+# Unity ROS-TCP-Endpoint Configuration for DeviceState Testing
+#
+# This configuration sets up the ROS-TCP-Endpoint to bridge
+# the Force Dimension DeviceState messages to Unity.
+#
+# Usage:
+#   ros2 run ros_tcp_endpoint default_server_endpoint --ros-args --params-file device_state_test.yaml
+
+/unity_endpoint:
+  ros__parameters:
+    # TCP connection settings
+    ROS_IP: 127.0.0.1
+    ROS_TCP_PORT: 10000
+
+    # Connection timeouts
+    tcp_nodelay: true
+    keepalive: true
